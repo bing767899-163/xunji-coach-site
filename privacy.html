@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How Xunji AI Coach handles training and Gmail data.">
+  <title>Privacy Policy | Xunji AI Coach</title>
+  <style>
+:root { color-scheme: light; font-family: system-ui, sans-serif; color: #17332b; background: #f7f8f2; line-height: 1.65; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.wrap { width: min(100% - 2.5rem, 48rem); margin-inline: auto; }
+header, footer { border-block-end: 1px solid #d5dfd5; }
+header .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem; padding-block: 1.15rem; }
+header a { font-weight: 650; }
+main { padding-block: clamp(2.5rem, 7vw, 5rem); }
+.eyebrow { font-size: .8rem; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; color: #33604c; }
+h1 { font-size: clamp(2.2rem, 7vw, 4rem); letter-spacing: -.045em; line-height: 1.05; margin-block: .5rem 1.1rem; }
+h2 { font-size: 1.25rem; line-height: 1.3; margin-block: 2rem .5rem; }
+p, ul { margin-block: 0 1rem; }
+li + li { margin-top: .4rem; }
+.lead { font-size: clamp(1.1rem, 3vw, 1.35rem); max-width: 36rem; }
+.panel { background: #eaf1e8; border: 1px solid #d5dfd5; border-radius: 1rem; padding: clamp(1rem, 4vw, 1.75rem); margin-block: 2rem; }
+.panel h2 { margin-top: 0; }
+.panel p:last-child { margin-bottom: 0; }
+a { color: #235c47; text-underline-offset: .2em; overflow-wrap: anywhere; }
+a:focus-visible { outline: 2px solid #235c47; outline-offset: .25rem; }
+footer { border-block-start: 1px solid #d5dfd5; border-block-end: 0; padding-block: 1.25rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Main navigation">
+      <a href="./index.html">Xunji AI Coach</a>
+      <a href="./privacy.html" aria-current="page">Privacy Policy</a>
+    </nav>
+  </header>
+  <main class="wrap">
+<p class="eyebrow">Xunji AI Coach</p>
+<h1>Privacy Policy</h1>
+<p class="lead">This policy describes how the developer’s personal training assistant handles Xunji training data and Google account data. The project is for the developer’s own use and has no public registration.</p>
+
+<h2>Training records and templates</h2>
+<p>The Python program uses the Xunji API in read-only mode. It reads training dates, workout and exercise information, set counts, weights, repetitions, completion status, and timing or effort fields when available. It reads training templates for planned exercises and set targets. Fixed rules use this information to generate training suggestions and a plan for the developer.</p>
+
+<h2>Gmail access and delivery</h2>
+<p>The program uses Google OAuth 2.0 with the <code>gmail.compose</code> scope. It checks the authorized Gmail account’s email address against the configured recipient and sends training plans only to that account. The email can contain the developer’s training information.</p>
+<p>Before sending, the program lists drafts and checks their Message-ID headers to detect an earlier attempt. It creates a reservation draft with a deterministic Message-ID and a short operational message. That draft contains no training plan. The program retains it to help prevent duplicate delivery, including when a send attempt has an uncertain result.</p>
+
+<h2>Service providers</h2>
+<ul>
+  <li><strong>Xunji</strong> supplies the developer’s training records and templates through its API.</li>
+  <li><strong>Google</strong> provides OAuth authorization, Gmail draft access, and mail delivery.</li>
+  <li><strong>GitHub</strong> runs the Python program through GitHub Actions and provides the intended hosting for this static site through GitHub Pages.</li>
+</ul>
+<p>The project uses data for its personal training workflow. It does not sell personal data or provide it to third-party advertisers. These pages contain no analytics scripts or registration forms.</p>
+
+<h2>Credentials and retention</h2>
+<p>OAuth credentials are stored in a local directory excluded from Git and in GitHub Actions Secrets. They are kept separate from the public website. Workflow output is designed to report status without exposing credentials or full training records.</p>
+<p>Local training exports and previews can remain on the developer’s computer until the developer removes them. Sent plans and reservation drafts can remain in Gmail until they are removed under the account’s settings or Google’s retention practices. GitHub manages retention for its workflow records according to repository and platform settings. The project does not apply a fixed deletion period across these services.</p>
+
+<h2>Revoking Google access</h2>
+<p>To stop future Gmail access, open your <a href="https://myaccount.google.com/connections">Google Account connections</a>, select the OAuth app used by Xunji AI Coach, and remove its access. Revocation does not itself remove existing Gmail messages, drafts, local exports, or workflow records.</p>
+  </main>
+  <footer>
+    <div class="wrap">Developer contact · <a href="mailto:bing767899@gmail.com">bing767899@gmail.com</a></div>
+  </footer>
+</body>
+</html>
